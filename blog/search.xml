@@ -1,21 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/06/23/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+    <title>hexo博客的部署</title>
+    <url>/2022/06/24/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇讲的是我是如何手动部署这个博客的</p>
+<p>Github Pages自动部署请看隔壁 <a href="https://blog.zhanganzhi.com/zh-CN/2022/06/0800d76d306e/">GitHub Actions 自动部署 Hexo 博客</a></p>
+<p>本文主要讲linux下的部署，截图只有linux下的，windows可能缺失细节</p>
+</blockquote>
+<h1 id="在Linux环境下手动部署hexo博客"><a href="#在Linux环境下手动部署hexo博客" class="headerlink" title="在Linux环境下手动部署hexo博客"></a>在Linux环境下手动部署hexo博客</h1><p><strong>其实Vercel那个一键hexo也挺香的, 无需<code>hexo g 或 hexo d</code>只需把整个hexo的文件夹上传到你的仓库中就行，Vercel会给你自动部署</strong></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先你要有Github账号 Vercel账号（非必须，Vercel在国内速度快）<br>node.js和npm环境（Linux一般源里就有，Windows请看<a href="https://developer.aliyun.com/article/832078">这里</a>） 全局科学（非必须，npm换源 github改hosts）</p>
+<h2 id="安装hexo程序"><a href="#安装hexo程序" class="headerlink" title="安装hexo程序"></a>安装hexo程序</h2><p>打开你的终端（cmd），定位到一个你记得住的文件夹下</p>
+<p>使用下列指令安装 hexo</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install hexo-cli<br></code></pre></td></tr></table></figure>
+<p><img src="https://s1.328888.xyz/2022/06/24/sn7rX.png"><br><img src="https://s1.328888.xyz/2022/06/24/snpcM.png"><br><img src="https://s1.328888.xyz/2022/06/24/sn0S7.png"></p>
+<p><em>如报错请用root（管理员）权限执行</em></p>
+<p><em>如中途卡住不动请<code>ctrl+c</code>结束再试</em></p>
+<h2 id="生成hexo博客文件夹"><a href="#生成hexo博客文件夹" class="headerlink" title="生成hexo博客文件夹"></a>生成hexo博客文件夹</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo init [名字]<br><span class="hljs-comment"># 终端所在的文件夹下不要有重名文件夹</span><br><span class="hljs-comment"># 如找不到命令</span><br><span class="hljs-comment"># npx hexo init [名字]</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>执行完这个指令，在你终端所在文件夹下就应该有你刚才生成的hexo了<br><img src="https://s1.328888.xyz/2022/06/24/snCH2.png"><br><em>如中途卡住不动请<code>ctrl+c</code>结束再试</em></p>
+<h2 id="开个server看看"><a href="#开个server看看" class="headerlink" title="开个server看看"></a>开个server看看</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> [名字]<br>hexo s<br><span class="hljs-comment"># 如找不到命令</span><br><span class="hljs-comment"># npx hexo s</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>访问<code>localhost:4000</code>即可<br><img src="https://s1.328888.xyz/2022/06/24/snIsZ.png"><p><br><img src="https://s1.328888.xyz/2022/06/24/snlg3.png"><br><em>如端口被占用，请自行解决，或者改hexoserver的端口</em></p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>按照图片中的方式和自己的需求修改<br><img src="https://s1.328888.xyz/2022/06/24/sn84F.png"><p><br><img src="https://s1.328888.xyz/2022/06/24/snhSy.png"><p><br><img src="https://s1.328888.xyz/2022/06/24/snHik.png"></p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><h3 id="一些主题"><a href="#一些主题" class="headerlink" title="一些主题"></a>一些主题</h3><h4 id="Butterfly"><a href="#Butterfly" class="headerlink" title="Butterfly"></a>Butterfly</h4><p><strong>安装后会报错，可以修复，因为是我第一个用的hexo主题，在加上一些错误的部署操作，直接把整个网站搞挂了，我就没在用过这个主题了</strong><br><img src="https://camo.githubusercontent.com/cc33313189cc45d475faff9b2c4a9c5d5e4289e48ee333704ba7f105c9d04e95/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f6a65727279633132372f43444e406d322f696d672f7468656d652d627574746572666c792d726561646d652e706e67"></p>
+<h4 id="Diaspora"><a href="#Diaspora" class="headerlink" title="Diaspora"></a>Diaspora</h4><p><strong>只支持凉了的gitalk评论插件，搞了半天也不行，还是新鲜东西好</strong><br><img src="https://camo.githubusercontent.com/9a277aa67e6c8730f3515336a9ffa264c6b3bcc3163d728edcbce3fe8f250731/68747470733a2f2f666563682e696e2f7374617469632f696d616765732f44696173706f72612e6a7067"></p>
+<h4 id="Fluid"><a href="#Fluid" class="headerlink" title="Fluid"></a>Fluid</h4><p><strong>我现在用的，MD风格（怎么跟我脑袋中Android6.x的MD风格不一样呢），支持很多评论插件，安装后可能会报错，但修复简单</strong><br><img src="https://camo.githubusercontent.com/48b250de82787ee8090df0e3a3088e10d09a12b58fe1df55045f2476aca20978/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f666c7569642d6465762f737461746963406d61737465722f6865786f2d7468656d652d666c7569642f73637265656e73686f74732f696e6465782e706e67"></p>
+<h5 id="修复Fluid运行server可能会出现的yaml语法报错"><a href="#修复Fluid运行server可能会出现的yaml语法报错" class="headerlink" title="修复Fluid运行server可能会出现的yaml语法报错"></a>修复Fluid运行server可能会出现的yaml语法报错</h5><h6 id="yaml语法错误在执行一个会验证配置文件的指令（如-hexo-s）后才会在-config-fluid-yml中出现！"><a href="#yaml语法错误在执行一个会验证配置文件的指令（如-hexo-s）后才会在-config-fluid-yml中出现！" class="headerlink" title="yaml语法错误在执行一个会验证配置文件的指令（如 hexo s）后才会在_config.fluid.yml中出现！"></a>yaml语法错误在执行一个会验证配置文件的指令（如 hexo s）后才会在<code>_config.fluid.yml</code>中出现！</h6><p><img src="https://s1.328888.xyz/2022/06/24/sn5aB.png"><p><br><img src="https://s1.328888.xyz/2022/06/24/snt54.png"></p>
+<h3 id="Indigo"><a href="#Indigo" class="headerlink" title="Indigo"></a>Indigo</h3><p><strong>MD卡片风格的，简洁，我挺喜欢的，可惜不更新了，demo站也关了</strong></p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/d8c4de9c519c6174c58dfcb88c9542937e16560f/27e3b/themes/screenshots/indigo.jpg"></p>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><h4 id="默认的主题还可以，如果你不想换，请略过"><a href="#默认的主题还可以，如果你不想换，请略过" class="headerlink" title="默认的主题还可以，如果你不想换，请略过"></a>默认的主题还可以，如果你不想换，请略过</h4><h4 id="我前后试了很多主题，要么没人管理，要么就一堆报错糊你脸上"><a href="#我前后试了很多主题，要么没人管理，要么就一堆报错糊你脸上" class="headerlink" title="我前后试了很多主题，要么没人管理，要么就一堆报错糊你脸上"></a>我前后试了很多主题，要么没人管理，要么就一堆报错糊你脸上</h4><p>我现在用的主题是 fluid 主题，有人管理，内置很多评论插件,下面就演示更换默认主题为fluid主题,其他主题请参照主题的文档</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用npm安装</span><br>npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p><strong>安装完先在hexo博客文件夹下创建一个叫<code>_config.fluid.yml</code>的文件把<code>_config.yml</code>文件中的内容复制进去</strong><br><img src="https://s1.328888.xyz/2022/06/24/snAcW.png"></p>
+<p>打开<code>_config.yml</code>找到<code>theme = xxxx</code>这一行</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 把原来的 theme=xxx</span><br><span class="hljs-comment"># 改为</span><br><span class="hljs-string">theme</span> <span class="hljs-string">=</span> <span class="hljs-string">fluid</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+<h4 id="添加-About页"><a href="#添加-About页" class="headerlink" title="添加 About页"></a>添加 About页</h4><p>Fluid主题有一个About页，但是第一次运行的时候不会自己创建</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 定位到博客文件夹</span><br>hexo new page about<br></code></pre></td></tr></table></figure>
+<p><img src="https://s1.328888.xyz/2022/06/24/snqsd.png"><br>创建成功后，编辑hexo文件夹下 <code>/source/about/index.md</code>替换里面的内容</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown">---<br>title: about<br><span class="hljs-section">layout: about</span><br><span class="hljs-section">---</span><br><br>这里写关于页的正文，支持 Markdown, HTML<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><h4 id="配置每个人都不一样-按自己需求来"><a href="#配置每个人都不一样-按自己需求来" class="headerlink" title="配置每个人都不一样,按自己需求来"></a>配置每个人都不一样,按自己需求来</h4><p><strong>使用npm安装的主题放在了 <code>node_modules/hexo-theme-[主题名]</code>下面</strong></p>
+<h4 id="我目前fluid主题的配置"><a href="#我目前fluid主题的配置" class="headerlink" title="我目前fluid主题的配置"></a>我目前fluid主题的配置</h4><p><a href="https://pastebin.ubuntu.com/p/5PvdtJgKgQ/">Ubuntu Pastebin</a></p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="评论插件"><a href="#评论插件" class="headerlink" title="评论插件"></a>评论插件</h3><p>这类插件有很多，基于什么的都有，推荐waline，接入方便，可以使用自定义数据库如 mongodb，mysql，leancloud（请注册国际版，国内版要备案），甚至还可以用github issues，Vercel后台，支持评论管理，fluid原生支持</p>
+<p>参见： <a href="https://waline.js.org/">官方文档</a></p>
+<h3 id="搜索插件"><a href="#搜索插件" class="headerlink" title="搜索插件"></a>搜索插件</h3><p>搜索插件searchdb可以用npm安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install --save hexo-generator-searchdb <br></code></pre></td></tr></table></figure>
+
+<h3 id="博客管理插件"><a href="#博客管理插件" class="headerlink" title="博客管理插件"></a>博客管理插件</h3><p>管理插件hexo-admin可以用npm安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install --save hexo-admin<br></code></pre></td></tr></table></figure>
+
+<p>安装之后运行server时就可以通过访问<code>localhost:4000/admin</code>来进入管理页面，就可以抛弃命令行了</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><blockquote>
+<p>部署呢我不建议使用<code>hexo d</code>因为他曾经导致直接把我的hexo程序上传到github，导致gitalk的oauth接口泄露</p>
+</blockquote>
+<p>所以这里我建议使用<code>hexo g</code>生成静态文件再手动上传的方法来部署</p>
+<ul>
+<li><p>首先呢，确保你的仓库开了pages(不开也行，用actions工作流同步到github.io的仓库就行，我就没开)</p>
+</li>
+<li><p>然后，把你的仓库clone下来</p>
+</li>
+<li><p>再然后， 用<code>hexo g</code>生成静态文件</p>
+</li>
+<li><p>最后，把<code>./public</code>下的所有文件复制到你的本地仓库，上传</p>
+</li>
+</ul>
+<p><em>如果你想在国内加速网页可以把博客部署在Vercel上,我把博客单放一仓库就是因为这个</em></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h4 id="Walinejs"><a href="#Walinejs" class="headerlink" title="Walinejs"></a><a href="https://waline.js.org/">Walinejs</a></h4><h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><a href="https://hexo.io/zh-cn/index.html">Hexo</a></h4><h4 id="使用命令npm-install-g-hexo-cli-……"><a href="#使用命令npm-install-g-hexo-cli-……" class="headerlink" title="使用命令npm install -g hexo-cli ……"></a><a href="https://blog.csdn.net/qq_42893625/article/details/100852221">使用命令npm install -g hexo-cli ……</a></h4><h4 id="GitHub-fluid-dev-x2F-hexo-them-……"><a href="#GitHub-fluid-dev-x2F-hexo-them-……" class="headerlink" title="GitHub - fluid-dev&#x2F;hexo-them ……"></a><a href="https://github.com/fluid-dev/hexo-theme-fluid">GitHub - fluid-dev&#x2F;hexo-them ……</a></h4>]]></content>
+      <categories>
+        <category>hexo</category>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+        <tag>termianl</tag>
+        <tag>linux</tag>
+        <tag>博客</tag>
+        <tag>终端</tag>
+      </tags>
   </entry>
 </search>
