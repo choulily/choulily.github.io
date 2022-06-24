@@ -1,5 +1,5 @@
 function back() {
-    setTimeout(window.location.href = ("./index.html"), 30000)
+    setTimeout(window.location.href = ("https://choulily.github.io/"), 30000)
 }
 
 window.onload = back

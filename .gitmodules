@@ -1,4 +1,0 @@
-[submodule "hexo-blog"]
-  path = blog/hexo-blogs
-  url = https://github.com/choulily/hexo-blog.git
-  ignore = all
