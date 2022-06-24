@@ -1,3 +1,4 @@
 # My Blog Places Here
 
-## Visit https://www.choulily.tk/blog to visit them
+## blog.lilychou.tk
+## choulily.github.io/blog
