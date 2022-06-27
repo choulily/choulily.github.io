@@ -1,3 +1,11 @@
+http://example.com/2022/06/24/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%83%A8%E7%BD%B2/
 http://example.com/about/index.html
-http://example.com/2022/06/23/hello-world/
 http://example.com/
+http://example.com/tags/hexo/
+http://example.com/tags/blog/
+http://example.com/tags/termianl/
+http://example.com/tags/linux/
+http://example.com/tags/%E5%8D%9A%E5%AE%A2/
+http://example.com/tags/%E7%BB%88%E7%AB%AF/
+http://example.com/categories/hexo/
+http://example.com/categories/hexo/blog/
