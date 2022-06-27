@@ -4,9 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <title>Lily Chou Website</title>
+    <title>Lily Chou 留言区 - Personal Page</title>
     <style type="text/css">
         body {
             background: url(./img/background.jpg);
@@ -39,61 +37,61 @@
             margin-bottom: auto;
         }
 
+        .info {
+            margin-right: 2%;
+            text-align: right;
+        }
+
         a {
             color: #47d6f9;
-        }
-
-        .stats {
-            float: left;
-        }
-
-        .languages {
-            margin: 2%;
-        }
-
-        .konqi {
-            margin-bottom: 0%;
-            margin-top: 4%;
         }
     </style>
     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     <script src="./sectime.js"></script>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
 </head>
 
 <body>
     <div class="screen">
         <div class="banner">
             <div class="icon">
-                <img src="./img/user_icon.png" alt="lilychousericon" width="128px">
+                <img src="../../img/user_icon.png" alt="lilychousericon" width="128px">
             </div>
             <div class="title">
                 <div class="name">
-                    <h1>Lily Chou Website</h1>
+                    <h1>留言区</h1>
                 </div>
                 <div class="qjump">
-                    <b>主页</b>|<a href="./jump.html?=https://blog.lilychou.tk/">博客</a>|<a href="./about/">关于我</a>|<a
-                        href="./comment.html">留个言吧</a>
+                    <a href="./">返回</a>
                 </div>
             </div>
         </div>
         <div class="content">
-            <h1>
-                Lily Chou 个人主页
-            </h1>
-            <div class="info">
-                <div class="stats">
-                    <img src="https://github-readme-stats.vercel.app/api?username=choulily&locale=cn&theme=merko"
-                        alt="Github Stats">
-                </div>
-                <div class="languages">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=choulily&layout=compact&locale=cn&theme=merko"
-                        alt="Most Used Languages">
-                </div>
-                <div class="commits">
-                    <img src="https://activity-graph.herokuapp.com/graph?username=choulily&locale=cn" alt="My Commits"
-                        width="100%">
-                </div>
+            <div class="blog_content">
+                <h1>Lily Chou 留言区</h1>
             </div>
+            <div id="commentarea"></div>
+            <script>
+                Waline.init({
+                    el: '#commentarea',
+                    serverURL: 'https://comment.lilychou.tk/',
+                });
+            </script>
+            <!-- <div class="info">
+                <div class="time">
+                    <p>yyyy/mm/dd</p>
+                </div>
+                <p>
+                <div class="author">
+                    <p>Author: Your Name</p>
+                </div>
+                <div class="license">
+                    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC-BY-NC-SA 4.0</a></p>
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img
+                            src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="CC-BY-NC-SA 3.0"></a>
+                </div>
+            </div> -->
         </div>
         <div class="footer">
             <div class="konqi">
