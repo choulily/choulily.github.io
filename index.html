@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>Lily Chou Website</title>
     <style type="text/css">
         body {
@@ -48,8 +50,14 @@
         .languages {
             margin: 2%;
         }
+
+        .konqi {
+            margin-bottom: 0%;
+            margin-top: 4%;
+        }
     </style>
     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <script src="./sectime.js"></script>
 </head>
 
 <body>
@@ -74,15 +82,16 @@
             </h1>
             <div class="info">
                 <div class="stats">
-                    <img src="https://github-readme-stats.vercel.app/api?username=choulily" alt="Github Stats">
+                    <img src="https://github-readme-stats.vercel.app/api?username=choulily&locale=cn&theme=merko"
+                        alt="Github Stats">
                 </div>
                 <div class="languages">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=choulily&layout=compact"
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=choulily&layout=compact&locale=cn&theme=merko"
                         alt="Most Used Languages">
                 </div>
                 <div class="commits">
-                    <img src="https://activity-graph.herokuapp.com/graph?username=choulily" alt="My Commits"
-                        width="90%">
+                    <img src="https://activity-graph.herokuapp.com/graph?username=choulily&locale=cn" alt="My Commits"
+                        width="100%">
                 </div>
             </div>
         </div>
@@ -92,12 +101,15 @@
             </div>
             <div class="hitokoto">
                 <h1>
-                    <p id="hitokoto"><a id="hitokoto_text">:D 获取中...</a></p>
+                    <p id="hitokoto"><a id="hitokoto_text">少女祈祷中</a></p>
                 </h1>
                 <a href="https://hitokoto.cn/">一言 · Powerd By Hitokoto</a>
             </div>
             <hr>
-            <a href="http://vercel.com/">由Vercel 和 Github Pages强力驱动</a>
+            <p>
+                <a>感谢 </a><a href="https://github.com/pages" target="_blank">Github Pages</a><a> 和 </a>
+                <a href="https://vercel.com/" target="_blank">Vercel</a><a> 使</a><a id="sitetime">初始化中</a>
+            </p>
         </div>
     </div>
 
