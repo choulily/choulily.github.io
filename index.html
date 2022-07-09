@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <!-- <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> -->
     <title>Lily Chou Website</title>
     <style type="text/css">
         body {
@@ -21,6 +21,7 @@
         .icon {
             float: left;
             opacity: 100%;
+            margin-right: 2%;
         }
 
         .title {
@@ -30,17 +31,29 @@
 
         .footer {
             text-align: center;
+            margin-top: 180px;
         }
 
         .screen {
+            margin-left: 15%;
+            margin-right: 15%;
             background-color: grey;
             opacity: 80%;
             margin-top: auto;
             margin-bottom: auto;
+            width: 70%;
+            border: 2px solid dimgray;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            position: relative;
+            top: 170px;
         }
 
         a {
             color: #47d6f9;
+            text-decoration: none;
         }
 
         .stats {
@@ -51,9 +64,28 @@
             margin: 2%;
         }
 
-        .konqi {
+        .icon {
             margin-bottom: 0%;
-            margin-top: 4%;
+        }
+
+        .header {
+            position: fixed;
+            background-color: dimgray;
+            width: 100%;
+            z-index: 999
+        }
+
+        .content {
+            text-align: left;
+            padding: 2%;
+        }
+
+        .stats_combobox {
+            width: 100%;
+        }
+
+        .license {
+            text-align: right;
         }
     </style>
     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
@@ -61,7 +93,7 @@
 </head>
 
 <body>
-    <div class="screen">
+    <div class="header">
         <div class="banner">
             <div class="icon">
                 <img src="./img/user_icon.png" alt="lilychousericon" width="128px">
@@ -71,49 +103,62 @@
                     <h1>Lily Chou Website</h1>
                 </div>
                 <div class="qjump">
-                    <b>主页</b>|<a href="./jump.html?=https://blog.lilychou.tk/">博客</a>|<a href="./about/">关于我</a>|<a
-                        href="./comment.html">留个言吧</a>
+                    <b>主页</b> | <a href="./jump.html?=https://blog.lilychou.tk/">博客</a> | <a href="./about/">关于我</a> |
+                    <a href="./comment.html">留个言吧</a>
                 </div>
             </div>
-        </div>
-        <div class="content">
-            <h1>
-                Lily Chou 个人主页
-            </h1>
-            <div class="info">
-                <div class="stats">
-                    <img src="https://github-readme-stats.vercel.app/api?username=choulily&locale=cn&theme=merko"
-                        alt="Github Stats">
-                </div>
-                <div class="languages">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=choulily&layout=compact&locale=cn&theme=merko"
-                        alt="Most Used Languages">
-                </div>
-                <div class="commits">
-                    <img src="https://activity-graph.herokuapp.com/graph?username=choulily&locale=cn" alt="My Commits"
-                        width="100%">
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="konqi">
-                <img src="./img/kde-konqui.svg" alt="Konqi_footer">
-            </div>
-            <div class="hitokoto">
-                <h1>
-                    <hr>
-                    <p id="hitokoto"><a id="hitokoto_text">少女祈祷中</a></p>
-
-                </h1>
-                <a href="https://hitokoto.cn/">一言 · Powerd By Hitokoto</a>
-            </div>
-            <hr>
-            <p>
-                <a>感谢 </a><a href="https://github.com/pages" target="_blank">Github Pages</a><a> 和 </a>
-                <a href="https://vercel.com/" target="_blank">Vercel</a><a> 使</a><a id="sitetime">初始化中</a>
-            </p>
         </div>
     </div>
+    <div>
+        <p>
+    </div>
+    <div class="screen">
+        <div class="content">
+            <article>
+                <h1>
+                    Lily Chou 个人主页
+                </h1>
+                <div class="info">
+                    <div class="stats_combobox">
+                        <div class="stats">
+                            <img src="https://github-readme-stats.vercel.app/api?username=choulily&locale=cn&theme=merko"
+                                alt="Github Stats" width="100%">
+                        </div>
+                        <div class="languages">
+                            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=choulily&layout=compact&locale=cn&theme=merko"
+                                alt="Most Used Languages" width="70%">
+                        </div>
+                    </div>
+                    <div class="commits">
+                        <img src="https://activity-graph.herokuapp.com/graph?username=choulily&locale=cn"
+                            alt="My Commits" width="100%">
+                    </div>
+                </div>
+                <p>
+                <div class="license">
+                    Author: Lily Chou<p>
+                        License: CC-BY-NC-SA 4.0
+                    <p>
+                        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="CC-BY-NC-SA 4.0">
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="hitokoto">
+            <h1>
+                <hr>
+                <p id="hitokoto"><a id="hitokoto_text">少女祈祷中</a></p>
+            </h1>
+            <a href="https://hitokoto.cn/">一言 · Powerd By Hitokoto</a>
+        </div>
+        <hr>
+        <p>
+            感谢 <a href="https://github.com/pages" target="_blank">Github Pages</a> 和
+            <a href="https://vercel.com/" target="_blank">Vercel</a> 使 <a id="sitetime">初始化中</a>
+        </p>
+    </div>
+
 
 
 
